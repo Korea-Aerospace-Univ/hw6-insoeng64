@@ -7,13 +7,13 @@ void main() {
     char maxCh;
     for (char* p = str; p < str + 10; p++) {
         int frequency = 0;
-        char ch = *p;
+        
         for (char* p1 = str; p1 < str + 10; p1++) {
             if (*p == *p1) {
                 frequency++;
             }
         }
-        if (frequency > maxFrequency) { maxCh = ch; maxFrequency = frequency; }
+        if (frequency > maxFrequency) { maxCh = p; maxFrequency = frequency; }
     }
     printf("%c %d", maxCh, maxFrequency);
 }
