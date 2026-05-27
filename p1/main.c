@@ -1,16 +1,15 @@
 #include <stdio.h>
 void main() {
     char str[10];
-    char* p = str;
-    for(int i = 0; i < 10; i++)
-        scanf("%c", (p+i));
+    for (char *p = str; p < str+10; p++)
+        scanf("%c", p);
     int maxFrequency = 0;
     char maxCh;
-    for (int j = 0; j < 10; j++) {
+    for (char* p = str; p < str + 10; p++) {
         int frequency = 0;
-        char ch = *(p+j);
-        for (int i = 0; i < 10; i++) {
-            if (*(p + i) == *(p + j)) {
+        char ch = *p;
+        for (char* p1 = str; p1 < str + 10; p1++) {
+            if (*p == *p1) {
                 frequency++;
             }
         }
