@@ -13,7 +13,7 @@ void main() {
                 frequency++;
             }
         }
-        if (frequency > maxFrequency) { maxCh = p; maxFrequency = frequency; }
+        if (frequency > maxFrequency) { maxCh = *p; maxFrequency = frequency; }
     }
     printf("%c %d", maxCh, maxFrequency);
 }
