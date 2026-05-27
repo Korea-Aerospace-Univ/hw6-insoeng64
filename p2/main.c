@@ -2,17 +2,17 @@
 void main() {
     int str[20];
     int str1[20];
-    int* p = str;
-    int* p1 = str1;
     int N = 0;
     scanf("%d", &N);
 
-    for(int i = 0; i < N; i++)
-        scanf("%d", (p+i));
-    for (int i = 0; i < N; i++)
-        scanf("%d", (p1 + i));
+    for(int *p = str; p < str + N; p++)
+        scanf("%d", p);
+    for (int *p1 = str1; p1 < str1+N; p1++)
+        scanf("%d", p1);
+    int* p1 = str1 + N;
 
-    for (int j = 0; j < N; j++) {
-        printf(" %d", * (p + j) + *(p1 + (N-1) - j));
+    for (int *p = str; p < str + N; p++) {
+        p1--;
+        printf(" %d", *p + *p1);
     }
 }
